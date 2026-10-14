@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "Plafer",
+    "slug": "plafer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "la.ilov.plafer"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#303034",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "la.ilov.plafer"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#303034"
+        }
+      ]
+    ],
+    "scheme": "plafer",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
