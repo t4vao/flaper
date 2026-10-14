@@ -13,6 +13,7 @@ export function Logo() {
 
 // Web-only CSS that React Native's style types don't model.
 const webTextClip = {
+  backgroundImage: `linear-gradient(269.89deg, ${colors.butter} 0.1%, ${colors.lavender} 50.48%, ${colors.sky} 99.9%)`,
   WebkitBackgroundClip: 'text',
   backgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
@@ -25,7 +26,6 @@ const styles = StyleSheet.create({
     lineHeight: 130,
     letterSpacing: -9,
     paddingHorizontal: 12,
-    backgroundImage: `linear-gradient(269.89deg, ${colors.butter} 0.1%, ${colors.lavender} 50.48%, ${colors.sky} 99.9%)`,
     ...webTextClip,
   },
 });
