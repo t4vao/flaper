@@ -16,5 +16,11 @@ export default function RootLayout() {
 
   if (!loaded && !error) return null;
 
-  return <Stack screenOptions={{ headerShown: false, animation: 'fade' }} />;
+  // The app opens straight on the map; login only appears when saving a place.
+  return (
+    <Stack screenOptions={{ headerShown: false, animation: 'fade' }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="login" options={{ presentation: 'fullScreenModal' }} />
+    </Stack>
+  );
 }
