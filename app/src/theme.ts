@@ -7,6 +7,9 @@ export const colors = {
   sky: '#B0D8FD',
   butter: '#FFEAA6',
   graphite: '#47474D',
+  // Dark map behind the photo pins (matches CARTO Dark Matter's land colour).
+  night: '#0E0E10',
+  muted: '#7A7A82',
 } as const;
 
 export const fonts = {
