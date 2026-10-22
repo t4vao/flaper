@@ -1,6 +1,6 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-import { Map as MapLibreMap, type MapLibreEvent, Marker } from 'maplibre-gl';
+import { AttributionControl, Map as MapLibreMap, type MapLibreEvent, Marker } from 'maplibre-gl';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { StyleSheet, View } from 'react-native';
@@ -44,8 +44,10 @@ export function RioMap({ places, selectedId, onSelectPlace, onPressMap, onUserGe
       zoom: RIO_ZOOM,
       minZoom: 10,
       maxBounds: RIO_BOUNDS,
-      attributionControl: { compact: true },
+      attributionControl: false,
     });
+    // Top-right, like the native map, so the credit never sits under the floating nav.
+    instance.addControl(new AttributionControl({ compact: true }), 'top-right');
     map.current = instance;
 
     for (const place of places) {
