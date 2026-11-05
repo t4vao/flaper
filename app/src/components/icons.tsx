@@ -77,10 +77,128 @@ export function HeartIcon(props: IconProps) {
   );
 }
 
+export function HomeIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <Path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+      <Path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    </Icon>
+  );
+}
+
+export function CompassIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <Circle cx={12} cy={12} r={10} />
+      <Path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+    </Icon>
+  );
+}
+
+export function BookmarkIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <Path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+    </Icon>
+  );
+}
+
 export function NavigationIcon(props: IconProps) {
   return (
     <Icon {...props}>
       <Path d="M3 11 22 2 13 21 11 13 3 11z" />
     </Icon>
+  );
+}
+
+// Flaper navigation: outline at rest, filled in two neutral tones when selected.
+// Kept separate from the outline Lucide glyphs used in content and actions.
+type NavIconProps = { size?: number; primary?: string; secondary?: string; filled?: boolean };
+
+// Reuse the same contour rotated around the grid centre: both halves have
+// identical weight and the diagonal gap stays consistent at small sizes.
+const COMPASS_HALF = 'M18.9 3.2c1.18-.45 2.35.72 1.9 1.9l-3.52 9.17a1.15 1.15 0 0 1-1.89.4l-6.06-6.06a1.15 1.15 0 0 1 .4-1.89z';
+
+function NavIcon({ size = 28, children }: NavIconProps & { children: React.ReactNode }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+      {children}
+    </Svg>
+  );
+}
+
+export function NavHomeIcon({ primary = colors.navIconPrimary, secondary = colors.navIconSecondary, filled = false, ...props }: NavIconProps) {
+  if (!filled) {
+    return (
+      <NavIcon {...props}>
+        <Path
+          d="M5 10.7v7.8a2 2 0 0 0 2 2h3.2v-4a1.8 1.8 0 0 1 3.6 0v4H17a2 2 0 0 0 2-2v-7.8M3.5 10.7l7-6.9a2.15 2.15 0 0 1 3 0l7 6.9"
+          stroke={primary}
+          strokeWidth={1.7}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </NavIcon>
+    );
+  }
+  return (
+    <NavIcon {...props}>
+      {/* A narrow gap separates the roof and body, like the detached reference shapes.
+          The doorway stays transparent rather than painted white over the glass. */}
+      <Path
+        fill={secondary}
+        d="M6.6 13.2h10.8a1.6 1.6 0 0 1 1.6 1.6v3.7a2 2 0 0 1-2 2h-3.2v-3.3a1.8 1.8 0 0 0-3.6 0v3.3H7a2 2 0 0 1-2-2v-3.7a1.6 1.6 0 0 1 1.6-1.6z"
+      />
+      <Path
+        fill={primary}
+        d="M10.45 3.3a2.35 2.35 0 0 1 3.1 0l7.12 6.26c.92.8.35 2.32-.87 2.32H4.2c-1.22 0-1.79-1.52-.87-2.32z"
+      />
+    </NavIcon>
+  );
+}
+
+export function NavExploreIcon({ primary = colors.navIconPrimary, secondary = colors.navIconSecondary, filled = false, ...props }: NavIconProps) {
+  return (
+    <NavIcon {...props}>
+      {/* Two detached compass halves echo the reference's soft directional shapes. */}
+      <Path
+        fill={filled ? primary : 'none'}
+        stroke={filled ? 'none' : primary}
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+        d={COMPASS_HALF}
+        transform={filled ? undefined : 'translate(0.6 -0.6)'}
+      />
+      <Path
+        fill={filled ? secondary : 'none'}
+        stroke={filled ? 'none' : primary}
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+        d={COMPASS_HALF}
+        transform={filled ? 'rotate(180 12 12)' : 'rotate(180 12 12) translate(0.6 -0.6)'}
+      />
+    </NavIcon>
+  );
+}
+
+export function NavProfileIcon({ primary = colors.navIconPrimary, secondary = colors.navIconSecondary, filled = false, ...props }: NavIconProps) {
+  return (
+    <NavIcon {...props}>
+      <Circle
+        cx={12}
+        cy={6.8}
+        r={3.8}
+        fill={filled ? secondary : 'none'}
+        stroke={filled ? 'none' : primary}
+        strokeWidth={1.7}
+      />
+      <Path
+        fill={filled ? primary : 'none'}
+        stroke={filled ? 'none' : primary}
+        strokeWidth={1.7}
+        strokeLinejoin="round"
+        d="M4 18.4c0-3.45 3.58-5.6 8-5.6s8 2.15 8 5.6v.1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"
+      />
+    </NavIcon>
   );
 }

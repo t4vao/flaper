@@ -1,0 +1,63 @@
+{
+  "title": "Início do Flaper: escolha a composição",
+  "question": "Três estruturas para a home, todas dentro da identidade atual (trio pastel, smiley, mapa escuro, nav flutuante só com ícones). Escolha uma, ajuste com Steer ou peça outra rodada.",
+  "options": [
+    {
+      "id": "mapa-amigos",
+      "label": "Mapa dos amigos",
+      "kicker": "THE ROLL",
+      "lineage": "o mapa escuro do protótipo, virado para as pessoas",
+      "thesis": "A home mostra onde seus amigos estiveram esta semana, no mapa, e o feed fica numa folha que sobe por cima.",
+      "palette": ["#0E0E10", "#FFFFFF", "#DAC9FD", "#B0D8FD", "#FFEAA6"],
+      "materials": ["mapa escuro com pinos de foto + avatar", "folha inferior branca arrastável"],
+      "viewport": "Mapa escuro na metade de cima com pinos das visitas recentes; folha branca com as últimas visitas embaixo; Registrar em cápsula acima da nav. Sem amigos: pinos de sugestões locais e um cartão 'Registre sua primeira visita'.",
+      "risk": "Repete o Explorar e pesa mais para carregar; a leitura do feed fica espremida em telas baixas.",
+      "wireframe": {"cols": 12, "rows": 20, "regions": [
+        {"label": "marca + avatar", "x": 0, "y": 0, "w": 12, "h": 1},
+        {"label": "mapa escuro: pinos dos amigos", "x": 0, "y": 1, "w": 12, "h": 9, "accent": true},
+        {"label": "folha: visitas recentes", "x": 0, "y": 10, "w": 12, "h": 7},
+        {"label": "Registrar visita", "x": 3, "y": 17, "w": 6, "h": 1, "accent": true},
+        {"label": "nav: 3 ícones", "x": 3, "y": 18, "w": 6, "h": 2}
+      ]}
+    },
+    {
+      "id": "pessoas-primeiro",
+      "label": "Pessoas primeiro",
+      "lineage": "fileira de pessoas + feed de visitas",
+      "thesis": "Primeiro quem saiu, depois onde foi: uma fileira de amigos com visitas novas no topo e um feed de cartões de visita abaixo.",
+      "palette": ["#F2F2F2", "#FFFFFF", "#303034", "#DAC9FD", "#FFEAA6"],
+      "materials": ["avatares com anel do gradiente quando há visita nova", "cartões brancos raio 28 com foto, lugar em Instrument Serif, data e nota"],
+      "viewport": "Topo com marca e Registrar; fileira rolável de avatares; feed vertical de cartões (pessoa, lugar, data, nota, foto se houver, Curtir e Quero ir). Sem amigos: a fileira vira 'Convide amigos' e o feed mostra sugestões locais.",
+      "risk": "É o formato mais familiar (Instagram/Letterboxd); a marca precisa aparecer nos detalhes para não virar genérico.",
+      "wireframe": {"cols": 12, "rows": 20, "regions": [
+        {"label": "marca", "x": 0, "y": 0, "w": 8, "h": 1},
+        {"label": "Registrar", "x": 8, "y": 0, "w": 4, "h": 1, "accent": true},
+        {"label": "fileira de amigos", "x": 0, "y": 1, "w": 12, "h": 2, "accent": true},
+        {"label": "cartão de visita", "x": 0, "y": 3, "w": 12, "h": 7},
+        {"label": "cartão de visita", "x": 0, "y": 10, "w": 12, "h": 7},
+        {"label": "nav: 3 ícones", "x": 3, "y": 18, "w": 6, "h": 2}
+      ]}
+    },
+    {
+      "id": "semana-em-dias",
+      "label": "Semana em dias",
+      "lineage": "diário de bordo / agenda semanal",
+      "thesis": "A home é um diário da semana do grupo: visitas agrupadas por dia, e o topo do 'Hoje' já pergunta onde você foi.",
+      "palette": ["#FFFFFF", "#303034", "#7A7A82", "#B0D8FD", "#FFEAA6"],
+      "materials": ["tira de dias fixa no topo", "linhas compactas com miniatura 16, lugar em Instrument Serif e estrelas"],
+      "viewport": "Tira de sete dias com pontos onde houve visitas; seção 'Hoje' abre com a linha 'Onde você foi hoje?' que inicia o Registrar; abaixo 'Ontem', 'Sáb., 1 de nov.' com as visitas do dia. Sem amigos: só o seu diário e sugestões no 'Hoje'.",
+      "risk": "Dias sem atividade deixam buracos; com poucos amigos a semana parece vazia.",
+      "wireframe": {"cols": 12, "rows": 20, "regions": [
+        {"label": "marca + avatar", "x": 0, "y": 0, "w": 12, "h": 1},
+        {"label": "tira de 7 dias", "x": 0, "y": 1, "w": 12, "h": 2, "accent": true},
+        {"label": "Hoje: Onde você foi?", "x": 0, "y": 3, "w": 12, "h": 2, "accent": true},
+        {"label": "visitas de hoje", "x": 0, "y": 5, "w": 12, "h": 5},
+        {"label": "Ontem", "x": 0, "y": 10, "w": 12, "h": 4},
+        {"label": "Sáb., 1 de nov.", "x": 0, "y": 14, "w": 12, "h": 3},
+        {"label": "nav: 3 ícones", "x": 3, "y": 18, "w": 6, "h": 2}
+      ]}
+    }
+  ],
+  "reroll": true,
+  "steer": true
+}

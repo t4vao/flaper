@@ -6,7 +6,7 @@ import { colors, fonts } from '@/theme';
 export function Logo() {
   return (
     <Text accessibilityRole="header" style={styles.word}>
-      Plafer
+      Flaper
     </Text>
   );
 }

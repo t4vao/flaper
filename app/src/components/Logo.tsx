@@ -10,10 +10,10 @@ const GRADIENT = [colors.sky, colors.lavender, colors.butter] as const;
 const LOCATIONS = [0.001, 0.4952, 0.999] as const;
 
 export function Logo() {
-  const word = <Text style={styles.word}>Plafer</Text>;
+  const word = <Text style={styles.word}>Flaper</Text>;
 
   return (
-    <View accessible accessibilityRole="header" accessibilityLabel="Plafer">
+    <View accessible accessibilityRole="header" accessibilityLabel="Flaper">
       <MaskedView maskElement={word}>
         <LinearGradient
           colors={GRADIENT}
@@ -21,7 +21,7 @@ export function Logo() {
           start={{ x: 0, y: 0.5 }}
           end={{ x: 1, y: 0.5 }}
         >
-          <Text style={[styles.word, styles.hidden]}>Plafer</Text>
+          <Text style={[styles.word, styles.hidden]}>Flaper</Text>
         </LinearGradient>
       </MaskedView>
     </View>
