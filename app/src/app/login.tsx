@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { BrandMark } from '@/components/BrandMark';
 import { Logo } from '@/components/Logo';
 import { PillButton } from '@/components/PillButton';
 import { colors, layout } from '@/theme';
@@ -23,6 +24,7 @@ export default function Login() {
       <StatusBar style="light" />
 
       <View style={styles.content}>
+        <BrandMark />
         <Logo />
       </View>
 
